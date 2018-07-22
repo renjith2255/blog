@@ -2,12 +2,28 @@ package com.cw.blog.models;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
 	private String name;
 	private String firstName;
 	private String LastName;
 	private String email;
 	private String phone;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
 	private Date createdDate;
 
 	public String getName() {
@@ -58,4 +74,11 @@ public class User {
 		this.createdDate = createdDate;
 	}
 
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 }
