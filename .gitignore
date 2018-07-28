@@ -30,4 +30,4 @@
 /src/main/resources/static/
 
 # Angular, node and ..
-
+package-lock.json
