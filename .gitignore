@@ -23,3 +23,11 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+### Vim
+*.swp
+
+/src/main/resources/static/
+
+# Angular, node and ..
+
